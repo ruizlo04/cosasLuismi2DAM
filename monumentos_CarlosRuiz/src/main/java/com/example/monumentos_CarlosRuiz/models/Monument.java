@@ -1,4 +1,4 @@
-package com.example.monumentos_CarlosRuiz;
+package com.example.monumentos_CarlosRuiz.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
