@@ -18,4 +18,6 @@ public class Producto {
     private Double desc;
     private Double pvp;
     private List<String> imagenes;
+    private Categoria categoria;
+
 }

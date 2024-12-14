@@ -1,4 +1,4 @@
-package com.example.proyectoDtoAlumnoProductoCarlosRuiz.alumno;
+package com.example.proyectoDtoAlumnoProductoCarlosRuiz.producto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,10 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Curso {
-
+public class Categoria {
     private Long id;
     private String nombre;
-    private String tutor;
-    private String aula;
 }
