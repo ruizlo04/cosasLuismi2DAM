@@ -11,11 +11,11 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Direccion {
 
+    private String poblacion;
     private Long id;
     private String tipoVia;
     private String linea1;
     private String linea2;
     private String cp;
-    private Integer poblacion;
     private String provincia;
 }
