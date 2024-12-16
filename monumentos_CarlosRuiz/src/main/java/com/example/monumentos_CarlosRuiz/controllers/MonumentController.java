@@ -2,6 +2,7 @@ package com.example.monumentos_CarlosRuiz.controllers;
 
 import com.example.monumentos_CarlosRuiz.models.Monument;
 import com.example.monumentos_CarlosRuiz.services.MonumentService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/monument")
 @RequiredArgsConstructor
+@Tag(name = "Monumento", description = "El controlador de monumentos")
 public class MonumentController {
 
     private final MonumentService monumentService;
