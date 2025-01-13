@@ -10,15 +10,25 @@ public class MainDeMentira {
 
     private final ProductRepository repo;
 
+    private final CategoriaRepository categoriaRepo;
+
     @PostConstruct
     public void run(){
-     Producto p = Producto.builder()
-             .nombre("A")
-             .descripcion("AS")
-             .precio(12)
-             .build();
 
-     repo.save(p);
+        Categoria c = Categoria.builder()
+                .nombre("Mi prima la coja")
+                .build();
+
+        categoriaRepo.save(c);
+
+        Producto p = Producto.builder()
+                 .nombre("A")
+                 .descripcion("AS")
+                 .precio(12)
+                 .categoria(c)
+                 .build();
+
+        repo.save(p);
 
     }
 }
