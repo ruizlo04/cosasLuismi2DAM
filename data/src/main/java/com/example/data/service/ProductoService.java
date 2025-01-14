@@ -1,5 +1,9 @@
-package com.example.data;
+package com.example.data.service;
 
+import com.example.data.dto.EditProductoCmd;
+import com.example.data.models.Producto;
+import com.example.data.repos.CategoriaRepository;
+import com.example.data.repos.ProductRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

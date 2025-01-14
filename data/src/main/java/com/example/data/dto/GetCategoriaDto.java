@@ -1,4 +1,6 @@
-package com.example.data;
+package com.example.data.dto;
+
+import com.example.data.models.Categoria;
 
 public record GetCategoriaDto(Long id, String nombre) {
 

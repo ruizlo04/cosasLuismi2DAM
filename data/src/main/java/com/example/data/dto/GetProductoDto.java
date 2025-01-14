@@ -1,4 +1,7 @@
-package com.example.data;
+package com.example.data.dto;
+
+import com.example.data.models.Categoria;
+import com.example.data.models.Producto;
 
 public record GetProductoDto(
         Long id,

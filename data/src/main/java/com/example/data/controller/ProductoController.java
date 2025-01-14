@@ -1,5 +1,8 @@
-package com.example.data;
+package com.example.data.controller;
 
+import com.example.data.dto.EditProductoCmd;
+import com.example.data.models.Producto;
+import com.example.data.service.ProductoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

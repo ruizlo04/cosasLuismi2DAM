@@ -1,4 +1,4 @@
-package com.example.data;
+package com.example.data.dto;
 
 public record EditProductoCmd(
         String nombre,
