@@ -28,6 +28,17 @@ public class Curso {
     @ToString.Exclude
     private List<Estudiante> estudianteList = new ArrayList<>();
 
+
+        public void addEstudiante(Estudiante e){
+        e.setCurso(this);
+        this.getEstudianteList().add(e);
+    }
+
+    public void remove(Estudiante e){
+        this.getEstudianteList().remove(e);
+        e.setCurso(null);
+    }
+
     @Override
     public final boolean equals(Object o) {
         if (this == o) return true;
