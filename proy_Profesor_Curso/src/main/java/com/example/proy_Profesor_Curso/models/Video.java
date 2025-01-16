@@ -1,15 +1,35 @@
 package com.example.proy_Profesor_Curso.models;
 
-import jakarta.persistence.Entity;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
 
-@Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@ToString
+@Entity
+@IdClass(VideoPk.class)
 public class Video {
+
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    @Id
+    private Long cursoOnlineId;
+
+    private int orden;
+
+    private String titulo;
+
+    private String descripcion;
+
+    private String url;
+
+    @ManyToOne
+    @JoinColumn(name = "cursoOnlineId", insertable = false, updatable = false)
+    private CursoOnline cursoOnline;
+
 }
