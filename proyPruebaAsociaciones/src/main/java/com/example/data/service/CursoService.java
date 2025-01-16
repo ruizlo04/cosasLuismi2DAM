@@ -14,7 +14,7 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class CursoService {
-
+    
     private final CursoRepository cursoRepository;
 
     public List<Curso> findAll() {
