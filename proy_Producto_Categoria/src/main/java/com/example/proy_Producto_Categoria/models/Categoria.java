@@ -31,8 +31,16 @@ public class Categoria {
     )
     private List<Producto> productos = new ArrayList<>();
 
-    @OneToMany
-    private List<Categoria> subcategorias;
+    @ManyToOne
+    @JoinColumn(name = "categoria_relacion_id",
+                foreignKey = @ForeignKey(name = "fk_subcategoria_categoria")
+    )
+    private Categoria categoriaPadre;
+
+    @ToString.Exclude
+    @Builder.Default
+    @OneToMany(mappedBy = "categoriaPadre", fetch = FetchType.EAGER)
+    private List<Categoria> subcategorias = new ArrayList<>();
 
     private String nombre;
 

@@ -5,7 +5,6 @@ import com.example.proy_Profesor_Curso.models.Profesor;
 import com.example.proy_Profesor_Curso.models.Video;
 import com.example.proy_Profesor_Curso.repositories.CursoOnlineRepository;
 import com.example.proy_Profesor_Curso.repositories.ProfesorRepository;
-import com.example.proy_Profesor_Curso.repositories.VideoRepository;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -17,8 +16,6 @@ public class MainDeMentira {
     private final ProfesorRepository profesorRepository;
 
     private final CursoOnlineRepository cursoOnlineRepository;
-
-    private final VideoRepository videoRepository;
 
     @PostConstruct
     public void run(){
@@ -37,28 +34,63 @@ public class MainDeMentira {
                 .profesor(p)
                 .build();
 
-        cursoOnlineRepository.save(c);
-
-        p.addCursoOnline(c);
+        //cursoOnlineRepository.save(c);
 
         Video v = Video.builder()
                 .titulo("Cabestro")
-                .url("piru piru piru")
-                .cursoOnlineId(c.getId())
-                .cursoOnline(c)
+                .url("pira pira pira")
+                //.cursoOnline(c)
                 .build();
 
         Video v1 = Video.builder()
                 .titulo("Iruaaaa")
                 .url("piru piru piru")
-                .cursoOnlineId(c.getId())
-                .cursoOnline(c)
+                //.cursoOnline(c)
                 .build();
 
-        videoRepository.save(v);
-        videoRepository.save(v1);
-
-
         c.addVideos(v);
+        c.addVideos(v1);
+
+        cursoOnlineRepository.save(c);
+
+        Video v2 = Video.builder()
+                .titulo("Vídeo creado por luismi")
+                .url("piru piru piru")
+                //.cursoOnline(c)
+                .build();
+
+
+        c.addVideos(v2);
+
+        cursoOnlineRepository.save(c);
+
+        //p.addCursoOnline(c);
+
+        System.out.println(p);
+        System.out.println(c);
+        System.out.println(v);
+        System.out.println(v1);
+        System.out.println(v2);
+
+        System.out.println(c.getListaDeVideos());
+
+
+        /*c.deleteVideos(v1);
+
+        cursoOnlineRepository.save(c);*/
+
+        cursoOnlineRepository.delete(c);
+
+        /*System.out.println(c);
+
+        System.out.println("\n\n");
+        cursoOnlineRepository.findAll()
+                .forEach(curso -> {
+                    System.out.println(curso.toString());
+                    curso.getListaDeVideos()
+                            .forEach(System.out::println);
+                    System.out.println("");
+                });*/
+
     }
 }

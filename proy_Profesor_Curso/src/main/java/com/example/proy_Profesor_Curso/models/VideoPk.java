@@ -3,13 +3,11 @@ package com.example.proy_Profesor_Curso.models;
 import lombok.*;
 import java.io.Serializable;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class VideoPk implements Serializable {
+public class VideoPk {
     private Long id;
-    private Long cursoOnlineId;
+    private CursoOnline cursoOnline;
 }
 
