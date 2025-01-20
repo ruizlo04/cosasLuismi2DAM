@@ -22,6 +22,7 @@ public class Video {
 
     @Id
     @ManyToOne
+    @JoinColumn(name = "cursoOnlineId", insertable = false, updatable = false)
     private CursoOnline cursoOnline;
 
     private int orden;

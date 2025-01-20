@@ -39,12 +39,11 @@ public class CursoOnline {
 
     public void addVideos(Video v) {
         v.setCursoOnline(this);
-        this.listaDeVideos.add(v);
+        this.getListaDeVideos().add(v);
     }
 
     public void deleteVideos(Video v) {
-        //v.setCursoOnline(null);
-        this.listaDeVideos.remove(v);
+        this.getListaDeVideos().remove(v);
     }
 
 

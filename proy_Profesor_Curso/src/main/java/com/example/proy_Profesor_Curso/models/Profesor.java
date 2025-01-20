@@ -34,11 +34,11 @@ public class Profesor {
 
     public void addCursoOnline(CursoOnline curso){
         curso.setProfesor(this);
-        this.cursos.add(curso);
+        this.getCursos().add(curso);
     }
 
     public void deleteCursoOnline(CursoOnline curso){
-        this.cursos.remove(curso);
+        this.getCursos().remove(curso);
         curso.setProfesor(null);
     }
 
