@@ -1,7 +1,6 @@
 package com.example.pruebHerencia;
 
 import com.example.pruebHerencia.models.Modelo;
-import com.example.pruebHerencia.repositories.CarRepository;
 import com.example.pruebHerencia.repositories.ModeloRepository;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
