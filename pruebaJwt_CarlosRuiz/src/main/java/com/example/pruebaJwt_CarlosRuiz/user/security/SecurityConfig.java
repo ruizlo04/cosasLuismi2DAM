@@ -1,5 +1,7 @@
 package com.example.pruebaJwt_CarlosRuiz.user.security;
 
+import com.example.pruebaJwt_CarlosRuiz.user.security.exceptionhandling.JwtAccessDeniedHandler;
+import com.example.pruebaJwt_CarlosRuiz.user.security.exceptionhandling.JwtAuthenticationEntryPoint;
 import com.example.pruebaJwt_CarlosRuiz.user.security.jwt.access.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -25,6 +27,8 @@ public class SecurityConfig {
     private final PasswordEncoder passwordEncoder;
     private final UserDetailsService userDetailsService;
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
+    private final JwtAuthenticationEntryPoint authenticationEntryPoint;
+    private final JwtAccessDeniedHandler jwtAccessDeniedHandler;
 
     @Bean
     AuthenticationManager authenticationManager(HttpSecurity http) throws Exception {
@@ -53,6 +57,10 @@ public class SecurityConfig {
         http.cors(Customizer.withDefaults());
         http.sessionManagement((session) -> session
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+        http.exceptionHandling(excepz -> excepz
+                .authenticationEntryPoint(authenticationEntryPoint)
+                .accessDeniedHandler(jwtAccessDeniedHandler));
+
         http.authorizeHttpRequests(authz -> authz
                 .requestMatchers(HttpMethod.POST, "auth/register", "auth/login").permitAll()
                 .anyRequest().permitAll());
