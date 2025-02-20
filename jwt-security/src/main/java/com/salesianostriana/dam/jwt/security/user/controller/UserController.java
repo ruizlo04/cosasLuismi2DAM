@@ -58,7 +58,6 @@ public class UserController {
 
         String accessToken = jwtService.generateAccessToken(user);
 
-        // Generar el token de refresco
         RefreshToken refreshToken = refreshTokenService.create(user);
 
         return ResponseEntity.status(HttpStatus.CREATED)
